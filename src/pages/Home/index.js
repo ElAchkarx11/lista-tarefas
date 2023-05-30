@@ -47,8 +47,9 @@ export default function Home() {
         <span className='text-center'>Gerencie sua agenda de forma fácil.</span>
 
         <div className='col-7 d-flex justify-content-center pt-4'>
-          <form className="form" onSubmit={handleLogin}>
+          <form id='form-login' className="form" onSubmit={handleLogin}>
             <input
+              id='email-input'
               type="text"
               className='form-control'
               placeholder="Digite seu email..."
@@ -57,6 +58,7 @@ export default function Home() {
             />
 
             <input
+              id='password-input'
               type="password"
               className='form-control'
               placeholder="******"
@@ -64,12 +66,12 @@ export default function Home() {
               onChange={(e) => setPassword(e.target.value)}
             />
 
-            <button className='' type="submit" >Acessar</button>
+            <button id='btn-login' className='' type="submit" >Acessar</button>
           </form>
 
 
         </div>
-        <Link className="button-link pt-4" to="/register">
+        <Link id="register-link" className="button-link pt-4" to="/register">
           Não possui uma conta? Cadastre-se
         </Link>
       </div>

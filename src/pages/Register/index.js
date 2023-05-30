@@ -39,8 +39,9 @@ export default function Register() {
         <span className='text-center'>Vamos criar sua conta!</span>
 
         <div className='col-7 d-flex justify-content-center pt-4'>
-          <form className="form" onSubmit={handleRegister}>
+          <form id='form-register' className="form" onSubmit={handleRegister}>
             <input
+              id='email-register-input'
               type="text"
               placeholder="Digite seu email..."
               value={email}
@@ -48,16 +49,17 @@ export default function Register() {
             />
 
             <input
+              id='email-password-input'
               type="password"
               placeholder="******"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
 
-            <button type="submit" >Cadastrar</button>
+            <button id='btn-register' type="submit" >Cadastrar</button>
           </form>
         </div>
-        <Link className="button-link text-center pt-4" to="/">
+        <Link id="link-login" className="button-link text-center pt-4" to="/">
           Já possui uma conta? Faça login!
         </Link>
       </div>

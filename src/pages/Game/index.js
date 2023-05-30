@@ -37,19 +37,19 @@ export default function Game() {
       <div className='container'>
         <div className='tabu'>
           <div className='tabuLinha'>
-            <div className='casa' data-pos='00' onClick={(e) => jogar(e)}>{j[0][0]}</div>
-            <div className='casa' data-pos='01' onClick={(e) => jogar(e)}>{j[0][1]}</div>
-            <div className='casa' data-pos='02' onClick={(e) => jogar(e)}>{j[0][2]}</div>
+            <div id='casa-1' className='casa' data-pos='00' onClick={(e) => jogar(e)}>{j[0][0]}</div>
+            <div id='casa-2' className='casa' data-pos='01' onClick={(e) => jogar(e)}>{j[0][1]}</div>
+            <div id='casa-3' className='casa' data-pos='02' onClick={(e) => jogar(e)}>{j[0][2]}</div>
           </div>
           <div className='tabuLinha'>
-            <div className='casa' data-pos='10' onClick={(e) => jogar(e)}>{j[1][0]}</div>
-            <div className='casa' data-pos='11' onClick={(e) => jogar(e)}>{j[1][1]}</div>
-            <div className='casa' data-pos='12' onClick={(e) => jogar(e)}>{j[1][2]}</div>
+            <div id='casa-4' className='casa' data-pos='10' onClick={(e) => jogar(e)}>{j[1][0]}</div>
+            <div id='casa-5' className='casa' data-pos='11' onClick={(e) => jogar(e)}>{j[1][1]}</div>
+            <div id='casa-6' className='casa' data-pos='12' onClick={(e) => jogar(e)}>{j[1][2]}</div>
           </div>
           <div className='tabuLinha'>
-            <div className='casa' data-pos='20' onClick={(e) => jogar(e)}>{j[2][0]}</div>
-            <div className='casa' data-pos='21' onClick={(e) => jogar(e)}>{j[2][1]}</div>
-            <div className='casa' data-pos='22' onClick={(e) => jogar(e)}>{j[2][2]}</div>
+            <div id='casa-7' className='casa' data-pos='20' onClick={(e) => jogar(e)}>{j[2][0]}</div>
+            <div id='casa-8' className='casa' data-pos='21' onClick={(e) => jogar(e)}>{j[2][1]}</div>
+            <div id='casa-9' className='casa' data-pos='22' onClick={(e) => jogar(e)}>{j[2][2]}</div>
           </div>
         </div>
       </div>
@@ -59,7 +59,7 @@ export default function Game() {
 
   const BtnJogarNovamente = () => {
     if (!jogando) {
-      return <button className='btn-jogar-nov' onClick={() => reiniciar()}>Jogar Novamente</button>
+      return <button id='btn-retry' className='btn-jogar-nov' onClick={() => reiniciar()}>Jogar Novamente</button>
     }
   }
 
@@ -207,7 +207,7 @@ export default function Game() {
       </div>
       <div>
         <Link to="/admin">
-          <button className="btn-voltar">
+          <button id='btn-back-home' className="btn-voltar">
             Voltar
           </button>
         </Link>

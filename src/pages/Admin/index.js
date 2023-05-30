@@ -139,13 +139,14 @@ export default function Admin() {
       </div>
       <div className='row'>
         <div className='col-12 col-md-4 d-flex d-md-block justify-content-center'>
-          <Calendar className='calendario' onChange={onChange} value={value} />
+          <Calendar id='calendar' className='calendario' onChange={onChange} value={value} />
         </div>
 
         <div className='col-12 col-md-8'>
 
           <form className="form" onSubmit={handleRegister}>
             <textarea
+              id='task-description'
               className='form-control'
               placeholder="Digite sua tarefa..."
               value={tarefaInput}
@@ -153,25 +154,25 @@ export default function Admin() {
             />
 
             {Object.keys(edit).length > 0 ? (
-              <button className="btn btn-primary" type="submit">Atualizar tarefa</button>
+              <button id='btn-update' className="btn btn-primary" type="submit">Atualizar tarefa</button>
             ) : (
-              <button className="btn btn-primary" type="submit">Registrar tarefa</button>
+              <button id='btn-register-task' className="btn btn-primary" type="submit">Registrar tarefa</button>
             )}
           </form>
 
           {tarefas.map((item) => (
             <article key={item.id} className="list">
-              <p>{item.tarefa}</p>
+              <p id='item-tarefa'>{item.tarefa}</p>
 
               <div>
-                <button className='btn btn-outline-primary' onClick={() => editTarefa(item)}>Editar</button>
-                <button className="btn btn-outline-warning" onClick={() => deleteTarefa(item.id)} >Concluir</button>
+                <button id='btn-edit' className='btn btn-outline-primary' onClick={() => editTarefa(item)}>Editar</button>
+                <button id='btn-conclude' className="btn btn-outline-warning" onClick={() => deleteTarefa(item.id)} >Concluir</button>
               </div>
             </article>
           ))}
 
-          <button className="btn-game" onClick={handleGame}>Jogar</button>
-          <button className="btn-logout" onClick={handleLogout}>Sair</button>
+          <button id='btn-play' className="btn-game" onClick={handleGame}>Jogar</button>
+          <button id='btn-logout' className="btn-logout" onClick={handleLogout}>Sair</button>
         </div>
 
       </div>
